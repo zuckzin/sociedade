@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Behavior Labs — O Ecossistema de IA que Transforma Obsessão em Resultados</title>
+<title>Behaviour Labs — Sociedade Operacional para Operadores de IA</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -266,7 +266,7 @@ section { position: relative; z-index: 1; }
 .hero-sub {
   font-size: clamp(16px, 2.5vw, 20px);
   color: var(--text-2);
-  max-width: 560px;
+  max-width: 600px;
   margin: 0 auto 40px;
   font-weight: 400;
   line-height: 1.5;
@@ -629,6 +629,118 @@ section { position: relative; z-index: 1; }
 }
 .pillar p { font-size: 13px; color: var(--text-2); line-height: 1.6; }
 
+/* ===== COMO FUNCIONA (PAPÉIS) ===== */
+#como-funciona { background: var(--bg); }
+
+.roles-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 64px;
+}
+.role-card {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.role-card:hover { border-color: var(--border-2); }
+.role-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+}
+.role-card.labs::before { background: linear-gradient(90deg, transparent, var(--purple), transparent); }
+.role-card.operador::before { background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+.role-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 14px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.role-card.labs .role-tag {
+  background: rgba(139,92,246,0.1);
+  border: 1px solid rgba(139,92,246,0.2);
+  color: var(--purple-2);
+}
+.role-card.operador .role-tag {
+  background: rgba(245,158,11,0.1);
+  border: 1px solid rgba(245,158,11,0.25);
+  color: var(--gold);
+}
+.role-card h3 {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 16px;
+  letter-spacing: -0.03em;
+}
+.role-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.role-list li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.5;
+}
+.role-list li .ri {
+  width: 18px; height: 18px;
+  background: rgba(139,92,246,0.12);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+  font-size: 10px;
+}
+.role-card.operador .role-list li .ri { background: rgba(245,158,11,0.12); }
+
+/* ===== NAO E ===== */
+#nao-e { background: var(--bg-2); }
+
+.not-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.not-card {
+  padding: 32px;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  text-align: center;
+  transition: all 0.3s;
+}
+.not-card:hover { border-color: rgba(239,68,68,0.3); }
+.not-icon {
+  font-size: 28px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+.not-card h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+  text-decoration: line-through;
+  text-decoration-color: rgba(239,68,68,0.5);
+}
+.not-card p { font-size: 13px; color: var(--text-3); line-height: 1.6; }
+
 /* ===== PRODUTO ===== */
 #produto { background: var(--bg); }
 
@@ -748,8 +860,54 @@ section { position: relative; z-index: 1; }
 }
 .scarcity-note strong { color: var(--gold); }
 
+/* ===== MODELO ECONÔMICO ===== */
+#modelo-economico { background: var(--bg-2); }
+
+.econ-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 700px;
+  margin: 48px auto 0;
+}
+.econ-step {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  padding: 28px 32px;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  position: relative;
+}
+.econ-step:first-child { border-radius: var(--r-lg) var(--r-lg) 0 0; }
+.econ-step:last-child { border-radius: 0 0 var(--r-lg) var(--r-lg); }
+.econ-step + .econ-step { border-top: none; }
+.econ-num {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 700;
+  color: rgba(139,92,246,0.2);
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 36px;
+}
+.econ-step h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+  letter-spacing: -0.02em;
+}
+.econ-step p { font-size: 13px; color: var(--text-2); line-height: 1.6; }
+.econ-highlight {
+  background: linear-gradient(135deg, rgba(139,92,246,0.08) 0%, rgba(245,158,11,0.06) 100%);
+  border-color: rgba(139,92,246,0.2) !important;
+}
+.econ-highlight .econ-num { color: rgba(245,158,11,0.4); }
+
 /* ===== PROVA SOCIAL ===== */
-#prova { background: var(--bg-2); }
+#prova { background: var(--bg); }
 
 .proof-layout {
   display: grid;
@@ -853,8 +1011,105 @@ section { position: relative; z-index: 1; }
 }
 .metric-label { font-size: 12px; color: var(--text-3); font-weight: 500; }
 
+/* ===== JORNADA ===== */
+#jornada { background: var(--bg-2); }
+
+.journey-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 64px;
+}
+.journey-card {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 32px;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.journey-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--purple), var(--purple-2));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s;
+}
+.journey-card:hover { border-color: var(--border-2); }
+.journey-card:hover::after { transform: scaleX(1); }
+.journey-phase {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--purple-2);
+  margin-bottom: 12px;
+}
+.journey-card:nth-child(2) .journey-phase { color: var(--gold); }
+.journey-card:nth-child(2)::after { background: linear-gradient(90deg, var(--gold), var(--gold-2)); }
+.journey-card:nth-child(3) .journey-phase { color: #10B981; }
+.journey-card:nth-child(3)::after { background: linear-gradient(90deg, #10B981, #34D399); }
+.journey-card h3 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 12px;
+  letter-spacing: -0.03em;
+}
+.journey-steps {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.journey-steps li {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.5;
+  padding-left: 16px;
+  position: relative;
+}
+.journey-steps li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--text-3);
+}
+
+/* ===== REGRAS ===== */
+#regras { background: var(--bg); }
+
+.rules-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.rule-card {
+  padding: 32px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  transition: all 0.3s;
+}
+.rule-card:hover { border-color: var(--border-2); }
+.rule-card h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+.rule-card p { font-size: 14px; color: var(--text-2); line-height: 1.65; }
+
 /* ===== MERCADO ===== */
-#mercado { background: var(--bg); }
+#mercado { background: var(--bg-2); }
 
 .market-grid {
   display: grid;
@@ -864,7 +1119,7 @@ section { position: relative; z-index: 1; }
 }
 .market-card {
   padding: 36px;
-  background: var(--bg-2);
+  background: var(--bg-3);
   border: 1px solid var(--border);
   border-radius: var(--r-lg);
   text-align: center;
@@ -919,158 +1174,60 @@ section { position: relative; z-index: 1; }
 }
 .market-insight strong { color: var(--purple-2); font-weight: 600; }
 
-/* ===== ROADMAP ===== */
-#roadmap { background: var(--bg-2); }
+/* ===== PASSOS ===== */
+#passos { background: var(--bg); }
 
-.timeline { position: relative; }
-.timeline::before {
-  content: '';
-  position: absolute;
-  top: 0; bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1px;
-  background: linear-gradient(180deg, transparent, var(--purple), var(--gold), transparent);
-}
-.timeline-item {
+.steps-grid {
   display: grid;
-  grid-template-columns: 1fr 60px 1fr;
-  gap: 0;
-  align-items: start;
-  margin-bottom: 64px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 72px;
 }
-.timeline-item:last-child { margin-bottom: 0; }
-.timeline-item:nth-child(odd) .timeline-content { grid-column: 1; text-align: right; padding-right: 48px; }
-.timeline-item:nth-child(odd) .timeline-empty { grid-column: 3; }
-.timeline-item:nth-child(even) .timeline-content { grid-column: 3; text-align: left; padding-left: 48px; }
-.timeline-item:nth-child(even) .timeline-empty { grid-column: 1; }
-.timeline-node { grid-column: 2; display: flex; justify-content: center; padding-top: 4px; }
-.timeline-dot {
-  width: 20px; height: 20px;
-  border-radius: 50%;
-  border: 2px solid var(--purple);
-  background: var(--bg);
-  box-shadow: 0 0 16px rgba(139,92,246,0.4);
-  position: relative;
-  z-index: 1;
-  flex-shrink: 0;
-}
-.timeline-item:nth-child(2) .timeline-dot { border-color: var(--gold); box-shadow: 0 0 16px rgba(245,158,11,0.4); }
-.timeline-item:nth-child(3) .timeline-dot { border-color: #10B981; box-shadow: 0 0 16px rgba(16,185,129,0.4); }
-
-.timeline-content {
-  background: var(--bg-3);
+.step-card {
+  background: var(--bg-2);
   border: 1px solid var(--border);
   border-radius: var(--r-lg);
-  padding: 28px 32px;
+  padding: 32px 28px;
+  position: relative;
   transition: all 0.3s;
+  overflow: hidden;
 }
-.timeline-content:hover { border-color: var(--border-2); }
-.tl-tag {
+.step-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--purple), var(--purple-2));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s;
+}
+.step-card:hover { border-color: var(--border-2); background: var(--bg-3); }
+.step-card:hover::after { transform: scaleX(1); }
+.step-num {
+  font-family: var(--font-display);
+  font-size: 60px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: rgba(139,92,246,0.12);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.step-card h3 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 10px;
+  letter-spacing: -0.03em;
+}
+.step-card p { font-size: 13px; color: var(--text-2); line-height: 1.6; }
+.step-time {
   display: inline-block;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  margin-top: 16px;
+  font-size: 12px;
   color: var(--purple-2);
-  margin-bottom: 10px;
-}
-.timeline-item:nth-child(2) .tl-tag { color: var(--gold); }
-.timeline-item:nth-child(3) .tl-tag { color: #10B981; }
-.timeline-content h3 {
-  font-family: var(--font-display);
-  font-size: 24px;
   font-weight: 600;
-  color: var(--text);
-  margin-bottom: 10px;
-  letter-spacing: -0.03em;
-}
-.timeline-content p { font-size: 14px; color: var(--text-2); line-height: 1.65; }
-.timeline-content .tl-goal {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 14px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--purple-2);
-}
-.timeline-item:nth-child(2) .tl-goal { color: var(--gold); }
-.timeline-item:nth-child(3) .tl-goal { color: #10B981; }
-
-/* ===== POR QUE AGORA ===== */
-#por-que { background: var(--bg); }
-
-.why-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: center;
-}
-.comparison { display: flex; flex-direction: column; gap: 16px; }
-.compare-row {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  padding: 16px 20px;
-  border-radius: var(--r-md);
-  font-size: 14px;
-}
-.compare-row.yes {
-  background: rgba(139,92,246,0.08);
-  border: 1px solid rgba(139,92,246,0.2);
-  color: var(--text);
-}
-.compare-row.no {
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.05);
-  color: var(--text-3);
-  text-decoration: line-through;
-}
-.compare-icon { font-size: 16px; flex-shrink: 0; }
-.roi-card {
-  background: linear-gradient(135deg, rgba(139,92,246,0.1) 0%, rgba(245,158,11,0.06) 100%);
-  border: 1px solid rgba(139,92,246,0.2);
-  border-radius: var(--r-xl);
-  padding: 48px;
-  text-align: center;
-}
-.roi-invest {
-  font-size: 13px;
-  color: var(--text-3);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 8px;
-}
-.roi-amount {
-  font-family: var(--font-display);
-  font-size: 62px;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  color: var(--purple-2);
-  line-height: 1;
-  margin-bottom: 8px;
-}
-.roi-arrow { font-size: 24px; color: var(--text-3); margin: 16px 0; }
-.roi-return {
-  font-family: var(--font-display);
-  font-size: 44px;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  color: var(--gold);
-  line-height: 1;
-  margin-bottom: 8px;
-}
-.roi-label { font-size: 13px; color: var(--text-2); }
-.roi-quote {
-  margin-top: 28px;
-  padding: 20px;
-  background: rgba(255,255,255,0.03);
-  border-radius: var(--r-md);
-  font-size: 14px;
-  font-style: normal;
-  color: var(--text-2);
-  line-height: 1.6;
 }
 
 /* ===== OPORTUNIDADE ===== */
@@ -1129,62 +1286,6 @@ section { position: relative; z-index: 1; }
 }
 .opp-text p { font-size: 17px; color: var(--text-2); line-height: 1.65; }
 .opp-text strong { color: var(--text); }
-
-/* ===== PASSOS ===== */
-#passos { background: var(--bg); }
-
-.steps-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  margin-bottom: 72px;
-}
-.step-card {
-  background: var(--bg-2);
-  border: 1px solid var(--border);
-  border-radius: var(--r-lg);
-  padding: 32px 28px;
-  position: relative;
-  transition: all 0.3s;
-  overflow: hidden;
-}
-.step-card::after {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--purple), var(--purple-2));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s;
-}
-.step-card:hover { border-color: var(--border-2); background: var(--bg-3); }
-.step-card:hover::after { transform: scaleX(1); }
-.step-num {
-  font-family: var(--font-display);
-  font-size: 60px;
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  color: rgba(139,92,246,0.12);
-  line-height: 1;
-  margin-bottom: 16px;
-}
-.step-card h3 {
-  font-family: var(--font-display);
-  font-size: 22px;
-  font-weight: 600;
-  color: var(--text);
-  margin-bottom: 10px;
-  letter-spacing: -0.03em;
-}
-.step-card p { font-size: 13px; color: var(--text-2); line-height: 1.6; }
-.step-time {
-  display: inline-block;
-  margin-top: 16px;
-  font-size: 12px;
-  color: var(--purple-2);
-  font-weight: 600;
-}
 
 /* ===== CTA FINAL ===== */
 #cta-final {
@@ -1284,22 +1385,10 @@ footer p { font-size: 12px; color: var(--text-3); }
   0%,100% { box-shadow: 0 0 8px rgba(245,158,11,0.3); }
   50%      { box-shadow: 0 0 28px rgba(245,158,11,0.7), 0 0 60px rgba(245,158,11,0.2); }
 }
-@keyframes text-flicker {
-  0%,100%    { opacity: 1; }
-  92%        { opacity: 1; }
-  93%        { opacity: 0.8; }
-  94%        { opacity: 1; }
-  96%        { opacity: 0.9; }
-  97%        { opacity: 1; }
-}
 @keyframes gradient-shift {
   0%   { background-position: 0% 50%; }
   50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
-}
-@keyframes rotate-border {
-  from { --border-angle: 0turn; }
-  to   { --border-angle: 1turn; }
 }
 @keyframes scan-line {
   0%   { transform: translateY(-100%); opacity: 0; }
@@ -1311,10 +1400,6 @@ footer p { font-size: 12px; color: var(--text-3); }
   0%   { transform: scale(1); }
   50%  { transform: scale(1.08); }
   100% { transform: scale(1); }
-}
-@keyframes card-glow-in {
-  from { box-shadow: none; border-color: var(--border); }
-  to   { box-shadow: 0 0 30px rgba(139,92,246,0.15); border-color: var(--border-2); }
 }
 
 /* Animated gradient text on hero */
@@ -1343,12 +1428,9 @@ footer p { font-size: 12px; color: var(--text-3); }
 
 /* Shimmer on btn-primary */
 .btn-primary {
-  background-size: 200% auto;
-  animation: gradient-shift 3s ease infinite;
-}
-.btn-primary {
   background: linear-gradient(135deg, var(--purple) 0%, var(--purple-3) 40%, #9d4edd 60%, var(--purple-3) 100%);
   background-size: 200% auto;
+  animation: gradient-shift 3s ease infinite;
 }
 
 /* Outfit geometric refinement */
@@ -1394,14 +1476,6 @@ footer p { font-size: 12px; color: var(--text-3); }
 .scarcity-dot:nth-child(2) { animation-delay: 0.3s; }
 .scarcity-dot:nth-child(3) { animation-delay: 0.6s; }
 
-/* Animated timeline dot */
-.timeline-dot {
-  animation: border-glow 2.5s ease-in-out infinite;
-}
-.timeline-item:nth-child(2) .timeline-dot {
-  animation: border-glow-gold 2.5s ease-in-out infinite;
-}
-
 /* Slot active pulse stagger */
 .slot-circle.active:nth-child(1) { animation-delay: 0s; }
 .slot-circle.active:nth-child(3) { animation-delay: 0.4s; }
@@ -1416,11 +1490,6 @@ footer p { font-size: 12px; color: var(--text-3); }
 .roi-arrow {
   animation: float-y 2s ease-in-out infinite;
   display: block;
-}
-
-/* Big stat number pop */
-.big-stat-number.visible {
-  animation: counter-pop 0.5s ease 1.8s both;
 }
 
 /* Canvas overlay */
@@ -1457,14 +1526,10 @@ footer p { font-size: 12px; color: var(--text-3); }
   .offer-col:first-child { border-right: none; border-bottom: 1px solid var(--border); }
   .proof-layout { grid-template-columns: 1fr; }
   .market-grid { grid-template-columns: 1fr; }
-  .timeline::before { left: 20px; }
-  .timeline-item { grid-template-columns: 40px 1fr; }
-  .timeline-item:nth-child(odd) .timeline-content { grid-column: 2; text-align: left; padding-right: 0; padding-left: 24px; }
-  .timeline-item:nth-child(odd) .timeline-empty { display: none; }
-  .timeline-item:nth-child(even) .timeline-content { grid-column: 2; text-align: left; padding-left: 24px; }
-  .timeline-item:nth-child(even) .timeline-empty { display: none; }
-  .timeline-node { grid-column: 1; justify-content: flex-end; padding-right: 10px; }
-  .why-layout { grid-template-columns: 1fr; }
+  .roles-layout { grid-template-columns: 1fr; }
+  .not-grid { grid-template-columns: 1fr; }
+  .journey-grid { grid-template-columns: 1fr; }
+  .rules-grid { grid-template-columns: 1fr; }
   .steps-grid { grid-template-columns: repeat(2, 1fr); }
   .big-stat { flex-direction: column; gap: 16px; padding: 28px; }
   .offer-header { flex-direction: column; }
@@ -1491,9 +1556,9 @@ footer p { font-size: 12px; color: var(--text-3); }
 
 <!-- ===== NAVBAR ===== -->
 <nav id="navbar">
-  <div class="nav-logo">BEHAVIOR<span>.</span>LABS</div>
+  <div class="nav-logo">BEHAVIOUR<span>.</span>LABS</div>
   <a href="#cta-final" class="nav-cta">
-    Quero ser sócio
+    Quero entrar na sociedade
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 4l4 3-4 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </a>
 </nav>
@@ -1509,7 +1574,7 @@ footer p { font-size: 12px; color: var(--text-3); }
 
   <div class="hero-badge">
     <span class="dot"></span>
-    Apenas 3 vagas disponíveis
+    Vagas limitadas para operadores selecionados
   </div>
 
   <h1 class="hero-title">
@@ -1518,15 +1583,15 @@ footer p { font-size: 12px; color: var(--text-3); }
   </h1>
 
   <p class="hero-sub">
-    O Ecossistema de IA que Transforma<br>Obsessão em Resultados
+    A Sociedade Operacional que transforma<br>operadores de IA em operações lucrativas.<br>Direção validada + execução consistente = resultado.
   </p>
 
   <div class="hero-actions">
     <a href="#cta-final" class="btn-primary">
-      Seja meu sócio agora
+      Quero entrar na sociedade
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
-    <a href="#solucao" class="btn-ghost">Ver a oportunidade</a>
+    <a href="#como-funciona" class="btn-ghost">Como funciona</a>
   </div>
 
   <div class="hero-scarcity">
@@ -1537,7 +1602,7 @@ footer p { font-size: 12px; color: var(--text-3); }
       <span class="scarcity-dot used"></span>
       <span class="scarcity-dot used"></span>
     </div>
-    3 de 5 vagas disponíveis · Acesso limitado para garantir qualidade
+    3 de 5 vagas disponíveis · Seleção por perfil de execução
   </div>
 
   <div class="scroll-indicator">
@@ -1551,19 +1616,19 @@ footer p { font-size: 12px; color: var(--text-3); }
     <div class="stats-grid">
       <div class="stat-item reveal">
         <span class="stat-number gold-grad" data-target="70000" data-prefix="R$" data-suffix="k">R$0</span>
-        <span class="stat-label">Gerado em dias</span>
+        <span class="stat-label">Gerado com operação ativa</span>
       </div>
       <div class="stat-item reveal reveal-delay-1">
-        <span class="stat-number" data-target="6" data-prefix="+" data-suffix=" Dígitos">+0</span>
-        <span class="stat-label">Resultados gerados</span>
+        <span class="stat-number" data-target="50" data-suffix="/50">0</span>
+        <span class="stat-label">Divisão do lucro líquido</span>
       </div>
       <div class="stat-item reveal reveal-delay-2">
         <span class="stat-number" data-target="7" data-prefix="<" data-suffix=" dias">&lt;0</span>
-        <span class="stat-label">Primeira venda</span>
+        <span class="stat-label">Para operação em movimento</span>
       </div>
       <div class="stat-item reveal reveal-delay-3">
-        <span class="stat-number gold-grad" data-target="37" data-suffix="% /ano">0%</span>
-        <span class="stat-label">Crescimento do mercado</span>
+        <span class="stat-number gold-grad" data-target="24" data-suffix="h">0h</span>
+        <span class="stat-label">Do contrato ao kickoff</span>
       </div>
     </div>
   </div>
@@ -1573,39 +1638,39 @@ footer p { font-size: 12px; color: var(--text-3); }
 <section id="problema" class="section-pad">
   <div class="container">
     <div class="section-header reveal">
-      <div class="eyebrow">O Problema</div>
-      <h2 class="section-title">O Mercado de IA <span class="accent">Explodiu.</span><br>A Maioria <span class="gold">Fica Para Trás.</span></h2>
-      <p class="section-desc">A democratização da tecnologia criou uma corrida do ouro, mas sem o mapa certo, o destino é o fracasso.</p>
+      <div class="eyebrow">Você Já Sabe Disso</div>
+      <h2 class="section-title">Você Viu o <span class="accent">Potencial.</span><br>Tentou Executar. <span class="gold">Travou.</span></h2>
+      <p class="section-desc">Você passou pela imersão. Entendeu como funciona. Mas na hora de colocar em prática, bateu de frente com a realidade.</p>
     </div>
 
     <div class="big-stat reveal">
       <div class="big-stat-number" data-counter="90" data-suffix="%">0%</div>
       <div class="big-stat-text">
-        <strong>dos Empreendedores Travam</strong>
-        <p>Por falta de direção, método e estrutura operacional. A IA explodiu — mas o acesso à ferramenta não é acesso ao resultado.</p>
+        <strong>dos Operadores Travam Sozinhos</strong>
+        <p>Não por falta de vontade. Por falta de direção, método e alguém que já passou por isso orientando cada passo.</p>
       </div>
     </div>
 
     <div class="problems-grid">
       <div class="problem-card reveal">
-        <div class="problem-icon">⚡</div>
-        <h3>Crescimento Exponencial</h3>
-        <p>A velocidade da IA torna o conhecimento obsoleto em semanas. Quem não acompanha, desaparece do mercado antes de decolar.</p>
+        <div class="problem-icon">🔄</div>
+        <h3>"Qual persona eu escolho?"</h3>
+        <p>Você pesquisou, comparou, mas não tem certeza se está no caminho certo. Sem benchmark e sem validação, cada escolha vira um chute.</p>
       </div>
       <div class="problem-card reveal reveal-delay-1">
-        <div class="problem-icon">🔒</div>
-        <h3>Paralisia Operacional</h3>
-        <p>Acesso à ferramenta não é acesso ao resultado. A maioria trava na execução técnica e nunca sai do ponto zero.</p>
+        <div class="problem-icon">📱</div>
+        <h3>"Postei, mas não deu resultado"</h3>
+        <p>Criou o perfil, postou conteúdo, mas as views não vieram e a monetização não aconteceu. Falta saber o que ajustar e por quê.</p>
       </div>
       <div class="problem-card reveal reveal-delay-2">
-        <div class="problem-icon">🗺️</div>
-        <h3>Falta de Método & Estrutura</h3>
-        <p>Sem processos validados (SOPs), o negócio não escala e depende 100% do dono. Sem sistema, não há crescimento.</p>
+        <div class="problem-icon">🧩</div>
+        <h3>"Como vendo de verdade?"</h3>
+        <p>Sabe que tem potencial, mas travar na conversão é o padrão. Sem script, sem funil e sem acompanhamento, a venda não acontece.</p>
       </div>
       <div class="problem-card reveal reveal-delay-3">
-        <div class="problem-icon">🧬</div>
-        <h3>Darwinismo Digital</h3>
-        <p>Sem um sistema validado de monetização, você apenas queima tempo e capital. Sobrevivem apenas quem tem o mapa.</p>
+        <div class="problem-icon">😶</div>
+        <h3>"Estou fazendo sozinho"</h3>
+        <p>Sem ninguém pra perguntar, sem feedback, sem alguém que já validou dizendo "faz assim". A solidão operacional trava mais que a falta de conhecimento.</p>
       </div>
     </div>
   </div>
@@ -1628,33 +1693,106 @@ footer p { font-size: 12px; color: var(--text-3); }
       </div>
       <div class="solution-content">
         <div class="eyebrow reveal">A Solução</div>
-        <h2 class="section-title reveal">Um Ecossistema<br>de <span class="accent">Aceleração</span></h2>
-        <div class="motto-tag reveal reveal-delay-1">"A obsessão vence o talento."</div>
-        <p class="section-desc reveal reveal-delay-1">Behavior Labs preenche o gap de execução com método, equipe e tecnologia — modelo de <strong>Parceria Prática 50/50</strong>. Você executa com nossa orientação total.</p>
+        <h2 class="section-title reveal">Sociedade<br><span class="accent">Operacional</span></h2>
+        <div class="motto-tag reveal reveal-delay-1">"Direção validada + execução consistente = resultado."</div>
+        <p class="section-desc reveal reveal-delay-1">A Behaviour Labs não é curso, não é mentoria, não é agência. É uma <strong>parceria operacional real</strong> onde entramos com estratégia, direção, treinamento e estrutura — e você entra com execução e constância. Divisão 50/50 do lucro líquido.</p>
 
         <div class="pillars-list">
           <div class="pillar reveal reveal-delay-1">
             <div class="pillar-num">01</div>
             <div>
-              <h3>Método</h3>
-              <p>SOPs validados que já geraram múltiplos resultados de 5 dígitos. Processos testados no campo, não no papel.</p>
+              <h3>Direção Estratégica</h3>
+              <p>Definimos juntos a operação, persona e caminho de monetização. Você sabe o que fazer, como fazer, quando fazer e onde focar.</p>
             </div>
           </div>
           <div class="pillar reveal reveal-delay-2">
             <div class="pillar-num">02</div>
             <div>
-              <h3>Estrutura</h3>
-              <p>Coordenação dedicada, comunidade ativa no Discord e assets criativos virais prontos para uso imediato.</p>
+              <h3>Acompanhamento Real</h3>
+              <p>Calls de alinhamento, benchmark, otimização contínua e coordenador dedicado. Não existe "se vira sozinho" aqui.</p>
             </div>
           </div>
           <div class="pillar reveal reveal-delay-3">
             <div class="pillar-num">03</div>
             <div>
-              <h3>Escala</h3>
-              <p>Foco em monetização High Ticket & Volume com tráfego orgânico e pago. LTV maximizado por design.</p>
+              <h3>Estrutura Completa</h3>
+              <p>SOPs validados, treinamento, parceiros e recursos do ecossistema. Tudo pra reduzir erro, acelerar validação e gerar lucro.</p>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ===== O QUE NÃO É ===== -->
+<section id="nao-e" class="section-pad">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center;max-width:600px;margin:0 auto 0;">
+      <div class="eyebrow">Transparência Total</div>
+      <h2 class="section-title">O Que a Behaviour Labs<br><span class="accent">Não É</span></h2>
+      <p class="section-desc">Para não gerar expectativa errada. Clareza antes de tudo.</p>
+    </div>
+
+    <div class="not-grid">
+      <div class="not-card reveal">
+        <div class="not-icon">📚</div>
+        <h3>Curso Gravado</h3>
+        <p>Não é conteúdo pra você assistir sozinho. É parceria operacional com acompanhamento ativo.</p>
+      </div>
+      <div class="not-card reveal reveal-delay-1">
+        <div class="not-icon">📢</div>
+        <h3>Agência de Marketing</h3>
+        <p>Não fazemos a operação por você. Nós direcionamos, treinamos e acompanhamos — você executa.</p>
+      </div>
+      <div class="not-card reveal reveal-delay-2">
+        <div class="not-icon">🎤</div>
+        <h3>Mentoria Genérica</h3>
+        <p>Não é papo motivacional sem método. É direção prática, validada no campo, com processos reais.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ===== COMO FUNCIONA (PAPÉIS) ===== -->
+<section id="como-funciona" class="section-pad">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center;max-width:600px;margin:0 auto 0;">
+      <div class="eyebrow">Como Funciona</div>
+      <h2 class="section-title">Cada Lado Tem<br>Seu <span class="accent">Papel</span></h2>
+      <p class="section-desc">Uma parceria só funciona quando cada parte cumpre o seu. Aqui é tudo documentado e transparente.</p>
+    </div>
+
+    <div class="roles-layout">
+      <div class="role-card labs reveal">
+        <div class="role-tag">🧠 Behaviour Labs</div>
+        <h3>O que nós fazemos</h3>
+        <ul class="role-list">
+          <li><span class="ri">→</span> Definição da operação e persona ideal</li>
+          <li><span class="ri">→</span> Estratégia de monetização validada</li>
+          <li><span class="ri">→</span> Benchmark e treinamento operacional</li>
+          <li><span class="ri">→</span> Calls de alinhamento e otimização</li>
+          <li><span class="ri">→</span> Acompanhamento contínuo da performance</li>
+          <li><span class="ri">→</span> Acesso a parceiros e recursos do ecossistema</li>
+          <li><span class="ri">→</span> Visão de crescimento e expansão</li>
+        </ul>
+      </div>
+      <div class="role-card operador reveal reveal-delay-1">
+        <div class="role-tag">⚡ Operador (Você)</div>
+        <h3>O que você faz</h3>
+        <ul class="role-list">
+          <li><span class="ri">→</span> Execução diária da estratégia definida</li>
+          <li><span class="ri">→</span> Constância na produção de conteúdo</li>
+          <li><span class="ri">→</span> Operação ativa do modelo de IA</li>
+          <li><span class="ri">→</span> Aplicação dos SOPs e direcionamentos</li>
+          <li><span class="ri">→</span> Comprometimento com os alinhamentos</li>
+          <li><span class="ri">→</span> Estrutura básica própria (celular, PC ou notebook)</li>
+          <li><span class="ri">→</span> Mentalidade de execução, não de espectador</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -1668,37 +1806,37 @@ footer p { font-size: 12px; color: var(--text-3); }
     <div class="section-header reveal" style="text-align:center;max-width:560px;margin:0 auto 64px;">
       <div class="eyebrow">A Sociedade</div>
       <h2 class="section-title">O Que Você <span class="accent">Recebe</span></h2>
-      <p class="section-desc">Uma parceria real, não um curso. Você tem acesso ao sistema operacional completo.</p>
+      <p class="section-desc">Entrada na sociedade operacional para subir, validar e escalar uma operação com modelo de IA.</p>
     </div>
 
     <div class="offer-card reveal">
       <div class="offer-header">
         <div>
-          <div class="offer-title">Parceria Behavior Labs</div>
+          <div class="offer-title">Sociedade Operacional</div>
           <div class="offer-tier">
-            <span class="tier-badge">High Ticket</span>
-            <span class="tier-badge">High Touch</span>
-            <span class="tier-badge">High Return</span>
+            <span class="tier-badge">Parceria Real</span>
+            <span class="tier-badge">Acompanhamento Ativo</span>
+            <span class="tier-badge">50/50 Lucro</span>
           </div>
         </div>
         <div class="offer-price-block">
-          <div class="price-label">Investimento único</div>
+          <div class="price-label">Taxa de entrada</div>
           <div class="price-amount">R$ 2.500</div>
-          <div class="price-note">ou entrada + parcelas facilitadas</div>
+          <div class="price-note">+ divisão 50/50 do lucro líquido</div>
         </div>
       </div>
 
       <div class="offer-body">
         <div class="offer-col">
-          <h4>O que está incluso</h4>
+          <h4>Direção & Estratégia</h4>
           <ul class="deliverable-list">
             <li class="deliverable-item">
               <div class="check-icon">
                 <svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
               <div>
-                <strong>Assets Prontos para Uso</strong>
-                <span>Personas validadas, ideias de conteúdo, copy e funis de vendas completos.</span>
+                <strong>Definição da Operação & Persona</strong>
+                <span>Escolha da operação certa pro seu perfil, com persona validada e caminho claro de monetização.</span>
               </div>
             </li>
             <li class="deliverable-item">
@@ -1706,8 +1844,8 @@ footer p { font-size: 12px; color: var(--text-3); }
                 <svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
               <div>
-                <strong>Chatters & Conversão</strong>
-                <span>Scripts e estruturas para maximizar o LTV dos leads com alta eficiência.</span>
+                <strong>SOPs & Processos Validados</strong>
+                <span>Processos testados no campo que reduzem erro e aceleram a validação da operação.</span>
               </div>
             </li>
             <li class="deliverable-item">
@@ -1715,8 +1853,8 @@ footer p { font-size: 12px; color: var(--text-3); }
                 <svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
               <div>
-                <strong>Onboarding Intensivo de 7 Dias</strong>
-                <span>Plano de ação com acesso vitalício à comunidade. Kickoff em 24h após aprovação.</span>
+                <strong>Benchmark & Treinamento</strong>
+                <span>Referências do mercado e treinamento prático pra você operar com confiança desde o dia 1.</span>
               </div>
             </li>
             <li class="deliverable-item">
@@ -1724,14 +1862,14 @@ footer p { font-size: 12px; color: var(--text-3); }
                 <svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
               <div>
-                <strong>Suporte 24h no WhatsApp</strong>
-                <span>Canal direto com SLA rápido. Nunca fique sem suporte operacional.</span>
+                <strong>Otimização Contínua</strong>
+                <span>Revisão de performance, ajuste de estratégia e calibragem constante da operação.</span>
               </div>
             </li>
           </ul>
         </div>
         <div class="offer-col">
-          <h4>Coordenação dedicada</h4>
+          <h4>Acompanhamento Dedicado</h4>
           <ul class="deliverable-list">
             <li class="deliverable-item">
               <div class="check-icon">
@@ -1739,7 +1877,7 @@ footer p { font-size: 12px; color: var(--text-3); }
               </div>
               <div>
                 <strong>Coordenador Operacional</strong>
-                <span>Cada sócio tem um coordenador exclusivo dedicado ao seu sucesso.</span>
+                <span>Cada operador tem acompanhamento dedicado ao seu sucesso operacional.</span>
               </div>
             </li>
             <li class="deliverable-item">
@@ -1747,8 +1885,8 @@ footer p { font-size: 12px; color: var(--text-3); }
                 <svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
               <div>
-                <strong>2 Calls Estratégicas / Semana</strong>
-                <span>Revisão de performance, ajuste de estratégia e expansão planejada.</span>
+                <strong>Calls de Alinhamento</strong>
+                <span>Revisão regular de performance, ajuste de rota e planejamento de expansão.</span>
               </div>
             </li>
             <li class="deliverable-item">
@@ -1756,8 +1894,8 @@ footer p { font-size: 12px; color: var(--text-3); }
                 <svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
               <div>
-                <strong>1 Alinhamento Diário</strong>
-                <span>Touchpoint diário para garantir tração constante e resolver bloqueios.</span>
+                <strong>Suporte Operacional Direto</strong>
+                <span>Canal direto para resolver bloqueios e dúvidas em tempo real. Sem ficar travado.</span>
               </div>
             </li>
             <li class="deliverable-item">
@@ -1765,8 +1903,8 @@ footer p { font-size: 12px; color: var(--text-3); }
                 <svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
               <div>
-                <strong>Comunidade Discord Ativa</strong>
-                <span>Rede de sócios, troca de aprendizados e suporte coletivo em tempo real.</span>
+                <strong>Ecossistema de Parceiros</strong>
+                <span>Acesso a parceiros, recursos e integrações que aceleram a operação.</span>
               </div>
             </li>
           </ul>
@@ -1776,12 +1914,56 @@ footer p { font-size: 12px; color: var(--text-3); }
       <div class="offer-footer">
         <div class="scarcity-note">
           <span>⚠️</span>
-          <span>Limitado a <strong>3 sócios simultâneos</strong> para manter a qualidade e o acompanhamento individual.</span>
+          <span>Limitado a <strong>operadores selecionados</strong> para manter qualidade e acompanhamento individual.</span>
         </div>
         <a href="#cta-final" class="btn-primary">
-          Garantir minha vaga
+          Quero entrar na sociedade
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ===== MODELO ECONÔMICO ===== -->
+<section id="modelo-economico" class="section-pad">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center;max-width:600px;margin:0 auto 0;">
+      <div class="eyebrow">Modelo Econômico</div>
+      <h2 class="section-title">Como Funciona<br>a <span class="accent">Divisão</span></h2>
+      <p class="section-desc">Total transparência na lógica financeira. Sem surpresas.</p>
+    </div>
+
+    <div class="econ-flow">
+      <div class="econ-step reveal">
+        <div class="econ-num">1</div>
+        <div>
+          <h3>Taxa de Entrada — R$ 2.500</h3>
+          <p>Investimento único para ingressar na sociedade operacional. Garante acesso à estrutura, direção e acompanhamento completo.</p>
+        </div>
+      </div>
+      <div class="econ-step reveal reveal-delay-1">
+        <div class="econ-num">2</div>
+        <div>
+          <h3>Custos Operacionais</h3>
+          <p>Antes da divisão de lucro, são abatidos os custos da operação: ferramentas, softwares, bots, editor, chatter, produção de material e outros custos alinhados.</p>
+        </div>
+      </div>
+      <div class="econ-step reveal reveal-delay-2">
+        <div class="econ-num">3</div>
+        <div>
+          <h3>Adiantamento de Custos</h3>
+          <p>Se uma das partes adiantar custos da operação, o valor é reembolsado antes da divisão do lucro.</p>
+        </div>
+      </div>
+      <div class="econ-step econ-highlight reveal reveal-delay-3">
+        <div class="econ-num">4</div>
+        <div>
+          <h3>Lucro Líquido → 50/50</h3>
+          <p>Depois dos custos, o valor restante é lucro líquido. A divisão é direta: 50% para a Behaviour Labs, 50% para o operador. Sem pegadinhas.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -1793,50 +1975,50 @@ footer p { font-size: 12px; color: var(--text-3); }
 <section id="prova" class="section-pad">
   <div class="container">
     <div class="section-header reveal" style="text-align:center;max-width:560px;margin:0 auto 64px;">
-      <div class="eyebrow">Prova Social</div>
-      <h2 class="section-title">Resultados <span class="accent">Reais,</span><br>Campo de <span class="gold">Batalha</span></h2>
+      <div class="eyebrow">Resultados no Campo</div>
+      <h2 class="section-title">Operação <span class="accent">Validada,</span><br>Não <span class="gold">Promessa</span></h2>
     </div>
 
     <div class="proof-layout">
       <div class="case-card reveal">
         <div class="verified-badge">
           <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Verificado
+          Operação Ativa
         </div>
         <div class="case-revenue" data-counter="70000" data-prefix="R$ " data-format="brl">R$ 0</div>
-        <p class="case-desc">Gerado por um único modelo de IA em poucos dias. Resultado real, operação ativa, método validado no campo.</p>
+        <p class="case-desc">Gerado com um único modelo de IA em operação ativa. Resultado construído com o mesmo método, SOPs e estrutura que você vai receber na sociedade.</p>
         <div class="quote-block">
-          <p>"Não vendemos promessas. Vendemos um sistema operacional de IA validado diariamente no campo de batalha."</p>
+          <p>"Esse resultado não veio de sorte. Veio de persona certa, conteúdo consistente, funil estruturado e otimização diária. É exatamente isso que a sociedade entrega como direção."</p>
         </div>
       </div>
 
       <div class="metrics-grid">
         <div class="metric-card reveal reveal-delay-1">
-          <div class="metric-icon">📈</div>
+          <div class="metric-icon">🎯</div>
           <div>
-            <div class="metric-value">+6 Dig.</div>
-            <div class="metric-label">Gerados com modelos de IA</div>
+            <div class="metric-value">1 modelo</div>
+            <div class="metric-label">Operação focada, não dispersa</div>
           </div>
         </div>
         <div class="metric-card reveal reveal-delay-2">
-          <div class="metric-icon">🎯</div>
+          <div class="metric-icon">⚙️</div>
           <div>
-            <div class="metric-value">100%</div>
-            <div class="metric-label">Foco nos resultados do sócio</div>
+            <div class="metric-value">Mesmo método</div>
+            <div class="metric-label">SOPs que você vai usar na sociedade</div>
           </div>
         </div>
         <div class="metric-card reveal reveal-delay-3">
-          <div class="metric-icon">⚙️</div>
+          <div class="metric-icon">📈</div>
           <div>
-            <div class="metric-value">Validado</div>
-            <div class="metric-label">Processos e personas prontos</div>
+            <div class="metric-value">7 dias</div>
+            <div class="metric-label">Operação em movimento na 1ª semana</div>
           </div>
         </div>
         <div class="metric-card reveal reveal-delay-4">
-          <div class="metric-icon">⚡</div>
+          <div class="metric-icon">🔁</div>
           <div>
-            <div class="metric-value">&lt; 7 dias</div>
-            <div class="metric-label">Tempo médio para 1ª venda</div>
+            <div class="metric-value">Replicável</div>
+            <div class="metric-label">Estrutura feita pra ser repetida por outros operadores</div>
           </div>
         </div>
       </div>
@@ -1846,191 +2028,53 @@ footer p { font-size: 12px; color: var(--text-3); }
 
 <div class="section-divider"></div>
 
-<!-- ===== MERCADO ===== -->
-<section id="mercado" class="section-pad">
+<!-- ===== JORNADA DO OPERADOR ===== -->
+<section id="jornada" class="section-pad">
   <div class="container">
-    <div class="section-header reveal" style="text-align:center;max-width:600px;margin:0 auto 64px;">
-      <div class="eyebrow">Contexto de Mercado</div>
-      <h2 class="section-title">O Mercado Nunca Esteve<br>Tão <span class="accent">Favorável</span></h2>
-      <p class="section-desc">Estamos no início de uma janela de arbitragem de atenção sem precedentes.</p>
+    <div class="section-header reveal" style="text-align:center;max-width:600px;margin:0 auto 0;">
+      <div class="eyebrow">Jornada do Operador</div>
+      <h2 class="section-title">Da Entrada ao<br><span class="accent">Resultado</span></h2>
+      <p class="section-desc">A jornada completa dentro da sociedade. Cada fase com marcos claros.</p>
     </div>
 
-    <div class="market-grid">
-      <div class="market-card reveal">
-        <div class="market-num">37%</div>
-        <h3>Crescimento Anual</h3>
-        <p>O mercado global de IA cresce 37% ao ano. A janela de entrada ainda está aberta.</p>
+    <div class="journey-grid">
+      <div class="journey-card reveal">
+        <div class="journey-phase">Fase 1 — Fundação (Semana 1)</div>
+        <h3>Estruturar & Começar</h3>
+        <ul class="journey-steps">
+          <li>Call de alinhamento inicial</li>
+          <li>Entendimento da sua estrutura atual</li>
+          <li>Definição da persona e operação</li>
+          <li>Aplicação da estratégia</li>
+          <li>Perfil estruturado e conteúdo sendo postado</li>
+          <li>Monetização começando</li>
+        </ul>
       </div>
-      <div class="market-card reveal reveal-delay-1">
-        <div class="market-num">#1</div>
-        <h3>Vertical Mais Lucrativa de 2025</h3>
-        <p>Monetização de modelos de IA (influenciadores virtuais) oferece as maiores margens do mercado digital.</p>
+      <div class="journey-card reveal reveal-delay-1">
+        <div class="journey-phase">Fase 2 — Validação</div>
+        <h3>Validar & Vender</h3>
+        <ul class="journey-steps">
+          <li>Crescimento da conta e geração de views</li>
+          <li>DMs e monetização ativa</li>
+          <li>Primeiras vendas realizadas</li>
+          <li>Lucro inicial apurado</li>
+          <li>Operação validada no campo</li>
+          <li>Ajustes e otimização contínua</li>
+        </ul>
       </div>
-      <div class="market-card reveal reveal-delay-2">
-        <div class="market-num">+1200%</div>
-        <h3>Potencial de Escala</h3>
-        <p>Baseado no crescimento do Creator Economy e IA combinados. Quem entra agora captura a onda.</p>
-      </div>
-    </div>
-
-    <div class="market-insight reveal">
-      <p>A Behavior Labs tem a infraestrutura para capturar o <strong>arbitragem de atenção</strong> antes que os custos de tráfego subam. Os primeiros sócios têm vantagem de território digital irrepetível.</p>
-    </div>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- ===== ROADMAP ===== -->
-<section id="roadmap" class="section-pad">
-  <div class="container">
-    <div class="section-header reveal" style="text-align:center;max-width:560px;margin:0 auto 80px;">
-      <div class="eyebrow">Roadmap Estratégico</div>
-      <h2 class="section-title">De <span class="accent">Agência</span><br>a <span class="gold">Holding</span></h2>
-    </div>
-
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-content reveal">
-          <div class="tl-tag">Hoje — Fundação & Tração</div>
-          <h3>Operação Validada</h3>
-          <p>Sócios ativos, funis de vendas funcionando e processos operacionais testados em campo real. A base está construída.</p>
-          <div class="tl-goal">✦ Operação 100% funcional</div>
-        </div>
-        <div class="timeline-node"><div class="timeline-dot"></div></div>
-        <div class="timeline-empty"></div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-empty"></div>
-        <div class="timeline-node"><div class="timeline-dot"></div></div>
-        <div class="timeline-content reveal">
-          <div class="tl-tag">12 Meses — Escala & Internacionalização</div>
-          <h3>Expansão Global</h3>
-          <p>Meta de R$ 1 Milhão/mês. Expansão para o mercado global ("Gringa") e formação de líderes internos para sustentar o crescimento.</p>
-          <div class="tl-goal">✦ Meta: R$ 1M / mês</div>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-content reveal">
-          <div class="tl-tag">3 Anos — Holding & Ecossistema</div>
-          <h3>Tecnologia Própria</h3>
-          <p>Meta de R$ 100 Milhões/ano. Tecnologia SaaS própria. Sede física. Evolução para uma holding global de tecnologia e IA.</p>
-          <div class="tl-goal">✦ Meta: R$ 100M / ano</div>
-        </div>
-        <div class="timeline-node"><div class="timeline-dot"></div></div>
-        <div class="timeline-empty"></div>
+      <div class="journey-card reveal reveal-delay-2">
+        <div class="journey-phase">Fase 3 — Escala</div>
+        <h3>Otimizar & Escalar</h3>
+        <ul class="journey-steps">
+          <li>Otimização de conteúdo e conversão</li>
+          <li>Escala de receita e LTV</li>
+          <li>Expansão planejada com suporte</li>
+          <li>Calibragem estratégica constante</li>
+          <li>Construção de operação sólida</li>
+          <li>Possibilidade de novos modelos</li>
+        </ul>
       </div>
     </div>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- ===== POR QUE AGORA ===== -->
-<section id="por-que" class="section-pad">
-  <div class="container">
-    <div class="why-layout">
-      <div>
-        <div class="eyebrow reveal">Por Que Agora?</div>
-        <h2 class="section-title reveal">A Proposta<br>Mais <span class="accent">Direta</span><br>do Mercado</h2>
-        <p class="section-desc reveal reveal-delay-1" style="margin-bottom:40px;">Participação real, estrutura completa e método validado. Sem promessas — apenas resultados documentados.</p>
-
-        <div class="comparison reveal reveal-delay-2">
-          <div class="compare-row yes">
-            <span class="compare-icon">✓</span>
-            <span>Participação 50/50 (parceria real, não curso)</span>
-          </div>
-          <div class="compare-row yes">
-            <span class="compare-icon">✓</span>
-            <span>Estrutura completa: SOPs, coordenadores e assets</span>
-          </div>
-          <div class="compare-row yes">
-            <span class="compare-icon">✓</span>
-            <span>Método validado com cases de R$ 70k+</span>
-          </div>
-          <div class="compare-row yes">
-            <span class="compare-icon">✓</span>
-            <span>Retorno estimado de R$ 30k–80k por ciclo</span>
-          </div>
-          <div class="compare-row no">
-            <span class="compare-icon">✗</span>
-            <span>Fazer sozinho sem método validado</span>
-          </div>
-          <div class="compare-row no">
-            <span class="compare-icon">✗</span>
-            <span>Pagar por cursos que não garantem execução</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="roi-card reveal reveal-delay-2">
-        <div class="roi-invest">Investimento único</div>
-        <div class="roi-amount">R$ 2.500</div>
-        <div class="roi-arrow">↓</div>
-        <div class="roi-label" style="margin-bottom:8px;">Retorno estimado por ciclo</div>
-        <div class="roi-return">R$ 30k — 80k</div>
-        <div class="roi-label">ROI potencial de até 3.200%</div>
-        <div class="roi-quote">
-          "É melhor ter 50% de algo que funciona e gera caixa do que 100% de nada."
-        </div>
-        <a href="#cta-final" class="btn-primary" style="margin-top:28px;width:100%;justify-content:center;">
-          Quero entrar agora
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- ===== OPORTUNIDADE ===== -->
-<section id="oportunidade" class="section-pad">
-  <div class="container" style="text-align:center;">
-    <div class="eyebrow reveal" style="justify-content:center;">A Janela de Oportunidade</div>
-    <h2 class="section-title reveal" style="text-align:center;">Apenas <span class="gold">3 Vagas</span><br>Restantes</h2>
-
-    <div class="slots-display reveal">
-      <div class="slot-item active">
-        <div class="slot-circle active">1</div>
-        <div class="slot-label">Disponível</div>
-      </div>
-      <div class="slots-divider"></div>
-      <div class="slot-item active">
-        <div class="slot-circle active">2</div>
-        <div class="slot-label">Disponível</div>
-      </div>
-      <div class="slots-divider"></div>
-      <div class="slot-item active">
-        <div class="slot-circle active">3</div>
-        <div class="slot-label">Disponível</div>
-      </div>
-      <div class="slots-divider"></div>
-      <div class="slot-item">
-        <div class="slot-circle taken">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </div>
-        <div class="slot-label">Ocupada</div>
-      </div>
-      <div class="slots-divider"></div>
-      <div class="slot-item">
-        <div class="slot-circle taken">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </div>
-        <div class="slot-label">Ocupada</div>
-      </div>
-    </div>
-
-    <div class="opp-text reveal">
-      <p>O limite crítico de capacidade não é marketing — é garantia de qualidade. Com mais sócios, a atenção se dilui e os resultados caem. <strong>Os primeiros sócios garantem território digital antes do mercado se massificar.</strong></p>
-    </div>
-
-    <a href="#cta-final" class="btn-primary reveal">
-      Garantir minha vaga agora
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
   </div>
 </section>
 
@@ -2041,61 +2085,92 @@ footer p { font-size: 12px; color: var(--text-3); }
   <div class="container">
     <div class="section-header reveal" style="text-align:center;max-width:560px;margin:0 auto 64px;">
       <div class="eyebrow">Próximos Passos</div>
-      <h2 class="section-title">Do <span class="accent">Interesse</span><br>ao Kickoff em <span class="gold">24h</span></h2>
+      <h2 class="section-title">Da Decisão ao<br><span class="accent">Kickoff</span> em <span class="gold">24h</span></h2>
     </div>
 
     <div class="steps-grid">
       <div class="step-card reveal">
         <div class="step-num">01</div>
         <h3>Alinhamento</h3>
-        <p>Uma conversa de 30 minutos para entender seu perfil e alinhar expectativas com total transparência.</p>
+        <p>Conversa para entender seu perfil, sua estrutura atual e alinhar expectativas com total transparência.</p>
         <span class="step-time">⏱ 30 minutos</span>
       </div>
       <div class="step-card reveal reveal-delay-1">
         <div class="step-num">02</div>
         <h3>Análise de Fit</h3>
-        <p>Validação do perfil "obcecado". Buscamos sócios com mentalidade de execução, não de espectador.</p>
+        <p>Validação do perfil de execução. Buscamos operadores com ambição, constância e comprometimento real.</p>
         <span class="step-time">⏱ 24–48 horas</span>
       </div>
       <div class="step-card reveal reveal-delay-2">
         <div class="step-num">03</div>
-        <h3>Aprovação</h3>
-        <p>Formalização do contrato e processamento do investimento. Tudo documentado e transparente.</p>
+        <h3>Aprovação & Entrada</h3>
+        <p>Formalização do contrato, processamento da taxa de entrada. Tudo documentado e transparente.</p>
         <span class="step-time">⏱ Mesmo dia</span>
       </div>
       <div class="step-card reveal reveal-delay-3">
         <div class="step-num">04</div>
         <h3>Kickoff 24h</h3>
-        <p>Acesso imediato ao ecossistema, plano de ação de 7 dias e primeiro alinhamento com seu coordenador.</p>
+        <p>Call de alinhamento, definição da operação, aplicação da estratégia. Meta: operação em movimento na primeira semana.</p>
         <span class="step-time">⏱ Acesso em 24h</span>
       </div>
     </div>
   </div>
 </section>
 
+
 <!-- ===== CTA FINAL ===== -->
 <section id="cta-final">
   <div class="container">
-    <div class="eyebrow reveal" style="justify-content:center;">Última chamada</div>
+    <div class="eyebrow reveal" style="justify-content:center;">A Decisão</div>
     <h2 class="cta-motto reveal">
-      "A obsessão vence o<br><em>talento todas as vezes."</em>
+      Sozinho, você já sabe<br><em>como termina.</em>
     </h2>
-    <p class="cta-sub reveal reveal-delay-1">Você chegou até aqui. A pergunta agora é: você vai agir?</p>
+    <p class="cta-sub reveal reveal-delay-1">Você pode continuar tentando sem direção, queimando tempo e energia. Ou pode entrar numa estrutura que já validou o caminho — e executar com quem já chegou lá.</p>
     <div class="cta-group reveal reveal-delay-2">
       <a href="#" class="btn-primary" style="font-size:17px;padding:18px 48px;">
-        QUERO SER SÓCIO AGORA
+        QUERO ENTRAR NA SOCIEDADE
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h12M10 5l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <div class="cta-scarcity">Apenas <strong>3 vagas disponíveis</strong> · Não perca a janela.</div>
+      <div class="cta-scarcity">Vagas limitadas · Seleção por perfil de execução</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRANSPARÊNCIA (REGRAS) ===== -->
+<section id="regras" class="section-pad" style="padding-top:80px;">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center;max-width:600px;margin:0 auto 0;">
+      <div class="eyebrow">Transparência</div>
+      <h2 class="section-title" style="font-size:clamp(28px,4vw,40px);">Antes de Entrar,<br><span class="accent">Saiba Disso</span></h2>
+      <p class="section-desc">Detalhes importantes sobre como a sociedade funciona. Sem letras miúdas.</p>
+    </div>
+
+    <div class="rules-grid">
+      <div class="rule-card reveal">
+        <h3>📋 Propriedade da Operação</h3>
+        <p>A operação, seus ativos e processos fazem parte da Behaviour Labs. O operador participa enquanto estiver ativo e alinhado com as regras de execução.</p>
+      </div>
+      <div class="rule-card reveal reveal-delay-1">
+        <h3>🚪 Saída ou Desligamento</h3>
+        <p>Se o operador sair ou for desligado, recebe o que já estiver apurado até a data. A participação futura na operação não continua.</p>
+      </div>
+      <div class="rule-card reveal reveal-delay-2">
+        <h3>📉 Se a Operação Não Performa</h3>
+        <p>A regra é reestruturar primeiro: revisar estratégia, persona, execução e conteúdo. Ajustar antes de qualquer decisão de encerramento.</p>
+      </div>
+      <div class="rule-card reveal reveal-delay-3">
+        <h3>⚠️ Se Não Houver Execução</h3>
+        <p>Sem execução consistente e sem justificativa, o operador pode receber aviso, passar por realinhamento ou perder a continuidade. A parceria depende dos dois lados.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ===== FOOTER ===== -->
 <footer>
-  <div class="footer-logo">BEHAVIOR LABS</div>
-  <p>Confidential Document © Behavior Labs Ecosystem · 2025</p>
-  <p style="margin-top:6px;">O Ecossistema de IA que Transforma Obsessão em Resultados</p>
+  <div class="footer-logo">BEHAVIOUR LABS</div>
+  <p>Documento Confidencial © Behaviour Labs · 2025</p>
+  <p style="margin-top:6px;">Sociedade Operacional para Operadores de IA</p>
 </footer>
 
 <!-- ===== JAVASCRIPT ===== -->
@@ -2146,7 +2221,6 @@ footer p { font-size: 12px; color: var(--text-3); }
         if (p.y < -5 || p.opacity <= 0) particles[i] = createParticle();
       });
 
-      // Connecting lines between nearby particles
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
@@ -2172,7 +2246,7 @@ footer p { font-size: 12px; color: var(--text-3); }
   ======================================== */
   const typeEl = document.getElementById('typewriter-line');
   if (typeEl) {
-    const text = 'BEHAVIOR';
+    const text = 'BEHAVIOUR';
     let idx = 0;
     const cursor = document.createElement('span');
     cursor.className = 'typewriter-cursor';
@@ -2184,7 +2258,6 @@ footer p { font-size: 12px; color: var(--text-3); }
         idx++;
         setTimeout(type, idx === 1 ? 300 : 80);
       } else {
-        // Remove cursor after typing done, blink a bit
         setTimeout(() => cursor.remove(), 2000);
       }
     }
@@ -2331,7 +2404,7 @@ footer p { font-size: 12px; color: var(--text-3); }
   /* ========================================
      10. TILT EFFECT ON CARDS
   ======================================== */
-  document.querySelectorAll('.market-card, .step-card, .roi-card').forEach(card => {
+  document.querySelectorAll('.market-card, .step-card, .role-card').forEach(card => {
     card.addEventListener('mousemove', e => {
       const rect  = card.getBoundingClientRect();
       const cx    = rect.left + rect.width  / 2;
@@ -2388,7 +2461,7 @@ footer p { font-size: 12px; color: var(--text-3); }
   }, { passive: true });
 
   /* ========================================
-     13. SECTION HIGHLIGHT GLOW ON SCROLL
+     13. SECTION HIGHLIGHT
   ======================================== */
   const sections = document.querySelectorAll('section');
   const sectionObserver = new IntersectionObserver((entries) => {
@@ -2399,11 +2472,6 @@ footer p { font-size: 12px; color: var(--text-3); }
     });
   }, { threshold: 0.2 });
   sections.forEach(s => sectionObserver.observe(s));
-
-  /* ========================================
-     14. ANIMATED COUNTER POP (after finish)
-  ======================================== */
-  // Already handled by CSS animation counter-pop
 
   /* ========================================
      15. RIPPLE EFFECT ON BUTTONS
@@ -2430,7 +2498,6 @@ footer p { font-size: 12px; color: var(--text-3); }
     });
   });
 
-  /* Ripple keyframe */
   const style = document.createElement('style');
   style.textContent = `
     @keyframes ripple-anim {
